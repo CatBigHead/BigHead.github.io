@@ -2,312 +2,153 @@
 layout: chead
 ---
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <!-- <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"> -->
-    <title>点滴</title>
-    <style>
-        .main-timeline {
-            overflow: hidden;
-            position: relative;
-        }
-
-        .main-timeline .timeline {
-            position: relative;
-            margin-top: -79px;
-        }
-
-        .main-timeline .timeline:first-child {
-            margin-top: 0;
-        }
-
-        .main-timeline .timeline:before,
-        .main-timeline .timeline:after {
-            content: "";
-            display: block;
-            width: 100%;
-            clear: both;
-        }
-
-        .main-timeline .timeline:before {
-            content: "";
-            width: 100%;
-            height: 100%;
-            box-shadow: -8px 0 5px -5px rgba(0, 0, 0, 0.5) inset;
-            position: absolute;
-            top: 0;
-            right: 0;
-            z-index: 2;
-        }
-
-        .main-timeline .timeline-icon {
-            width: 210px;
-            height: 210px;
-            border-radius: 50%;
-            border: 25px solid transparent;
-            border-top-color: #f44556;
-            border-right-color: #f44556;
-            margin: auto;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            z-index: 1;
-            transform: rotate(45deg);
-        }
-
-        .main-timeline .year {
-            display: block;
-            width: 110px;
-            height: 110px;
-            line-height: 110px;
-            border-radius: 50%;
-            background: #fff;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-            margin: auto;
-            font-size: 30px;
-            font-weight: bold;
-            color: #f44556;
-            text-align: center;
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            right: 0;
-            transform: rotate(-45deg);
-        }
-
-        .main-timeline .timeline-content {
-            width: 35%;
-            float: right;
-            background: #f44556;
-            padding: 30px 20px;
-            margin: 50px 0;
-            z-index: 1;
-            position: relative;
-        }
-
-        .main-timeline .timeline-content:before {
-            content: "";
-            width: 20%;
-            height: 15px;
-            background: #f44556;
-            position: absolute;
-            top: 50%;
-            left: -20%;
-            z-index: -1;
-            transform: translateY(-50%);
-        }
-
-        .main-timeline .title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #fff;
-            margin: 0 0 10px 0;
-        }
-
-        .main-timeline .description {
-            font-size: 16px;
-            color: #fff;
-            line-height: 24px;
-            margin: 0;
-        }
-
-        .main-timeline .timeline:nth-child(2n):before {
-            box-shadow: 8px 0 5px -5px rgba(0, 0, 0, 0.5) inset;
-        }
-
-        .main-timeline .timeline:nth-child(2n) .timeline-icon {
-            transform: rotate(-135deg);
-        }
-
-        .main-timeline .timeline:nth-child(2n) .year {
-            transform: rotate(135deg);
-        }
-
-        .main-timeline .timeline:nth-child(2n) .timeline-content {
-            float: left;
-        }
-
-        .main-timeline .timeline:nth-child(2n) .timeline-content:before {
-            left: auto;
-            right: -20%;
-        }
-
-        .main-timeline .timeline:nth-child(2n) .timeline-icon {
-            border-top-color: #e97e2e;
-            border-right-color: #e97e2e;
-        }
-
-        .main-timeline .timeline:nth-child(2n) .year {
-            color: #e97e2e;
-        }
-
-        .main-timeline .timeline:nth-child(2n) .timeline-content,
-        .main-timeline .timeline:nth-child(2n) .timeline-content:before {
-            background: #e97e2e;
-        }
-
-        .main-timeline .timeline:nth-child(3n) .timeline-icon {
-            border-top-color: #13afae;
-            border-right-color: #13afae;
-        }
-
-        .main-timeline .timeline:nth-child(3n) .year {
-            color: #13afae;
-        }
-
-        .main-timeline .timeline:nth-child(3n) .timeline-content,
-        .main-timeline .timeline:nth-child(3n) .timeline-content:before {
-            background: #13afae;
-        }
-
-        .main-timeline .timeline:nth-child(4n) .timeline-icon {
-            border-top-color: #105572;
-            border-right-color: #105572;
-        }
-
-        .main-timeline .timeline:nth-child(4n) .year {
-            color: #105572;
-        }
-
-        .main-timeline .timeline:nth-child(4n) .timeline-content,
-        .main-timeline .timeline:nth-child(4n) .timeline-content:before {
-            background: #105572;
-        }
-
-        @media only screen and (max-width: 1199px) {
-            .main-timeline .timeline {
-                margin-top: -103px;
-            }
-
-            .main-timeline .timeline-content:before {
-                left: -18%;
-            }
-
-            .main-timeline .timeline:nth-child(2n) .timeline-content:before {
-                right: -18%;
-            }
-        }
-
-        @media only screen and (max-width: 990px) {
-            .main-timeline .timeline {
-                margin-top: -127px;
-            }
-
-            .main-timeline .timeline-content:before {
-                left: -2%;
-            }
-
-            .main-timeline .timeline:nth-child(2n) .timeline-content:before {
-                right: -2%;
-            }
-        }
-
-        @media only screen and (max-width: 767px) {
-            .main-timeline .timeline {
-                margin-top: 0;
-                overflow: hidden;
-            }
-
-            .main-timeline .timeline:before,
-            .main-timeline .timeline:nth-child(2n):before {
-                box-shadow: none;
-            }
-
-            .main-timeline .timeline-icon,
-            .main-timeline .timeline:nth-child(2n) .timeline-icon {
-                margin-top: -30px;
-                margin-bottom: 20px;
-                position: relative;
-                transform: rotate(135deg);
-            }
-
-            .main-timeline .year,
-            .main-timeline .timeline:nth-child(2n) .year {
-                transform: rotate(-135deg);
-            }
-
-            .main-timeline .timeline-content,
-            .main-timeline .timeline:nth-child(2n) .timeline-content {
-                width: 100%;
-                float: none;
-                border-radius: 0 0 20px 20px;
-                text-align: center;
-                padding: 25px 20px;
-                margin: 0 auto;
-            }
-
-            .main-timeline .timeline-content:before,
-            .main-timeline .timeline:nth-child(2n) .timeline-content:before {
-                width: 15px;
-                height: 25px;
-                position: absolute;
-                top: -22px;
-                left: 50%;
-                z-index: -1;
-                transform: translate(-50%, 0);
-            }
-        }
-    </style>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href=/css/bootstrap.min.css" />
+	<link rel="stylesheet" type="text/css" href="/css/htmleaf-demo.css">
+	<link rel="stylesheet" type="text/css" href="/css/jquery.eeyellow.Timeline.css" />
+	<!--[if IE]>
+		<script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
+	<![endif]-->
 </head>
-
-<body> 
-    <div class="demo">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="main-timeline">
-                        <div class="timeline">
-                            <div class="timeline-icon"><span class="year">4月</span></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Web Desginer</h3>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia mi ultrices,
-                                    luctus nunc ut, commodo enim. Vivamus sem erat.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><span class="year">5月</span></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Web Developer</h3>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia mi ultrices,
-                                    luctus nunc ut, commodo enim. Vivamus sem erat.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><span class="year">6月</span></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Web Desginer</h3>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia mi ultrices,
-                                    luctus nunc ut, commodo enim. Vivamus sem erat.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="timeline">
-                            <div class="timeline-icon"><span class="year">7月</span></div>
-                            <div class="timeline-content">
-                                <h3 class="title">Web Developer</h3>
-                                <p class="description">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec lacinia mi ultrices,
-                                    luctus nunc ut, commodo enim. Vivamus sem erat.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<body>
+	<div class="htmleaf-container">
+		<header class="htmleaf-header">
+			<div class="htmleaf-links">
+				
+		</header>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="VivaTimeline">
+						<dl>
+	                        <dt>May 2016</dt>                                    
+	                        <dd class="pos-left clearfix">
+	                            <div class="circ"></div>
+	                            <div class="time">Feb 03</div>
+	                            <div class="events">
+	                                <div class="events-header">Event Heading</div>                                
+	                                <div class="events-body">                                                                                            
+	                                    <div class="row">
+	                                    	<div class="col-md-6 pull-left">
+	                                            <img class="events-object img-responsive img-rounded" src="img/dog01.jpeg" />                                            
+	                                        </div>
+	                                        <div class="events-desc">
+	                                        	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                                        </div>
+	                                    </div>      
+	                                    <div class="row">
+	                                    	<div class="col-md-6 pull-left">
+	                                            <img class="events-object img-responsive img-rounded" src="img/dog02.jpeg" />                                            
+	                                        </div>
+	                                        <div class="events-desc">
+	                                        	Morbi at nisi vitae mauris pretium egestas. Morbi placerat risus ligula, nec placerat urna porta vel. Nullam sollicitudin orci quis odio eleifend, ut facilisis orci lobortis. Vivamus sed lobortis odio. Nam volutpat, leo a ullamcorper luctus, sapien libero auctor est, sed semper massa turpis sed quam. Mauris posuere, libero in ultricies dignissim, lacus purus egestas urna, nec semper lorem tellus non eros. Nam at bibendum libero. Curabitur a ante et orci cursus tincidunt. Vivamus dictum, libero et rhoncus congue, nulla erat mollis dui, vitae cursus dui justo quis velit. In a tellus arcu. Nam at lobortis nisl. Donec consequat placerat eros, quis elementum mauris sodales a. Maecenas id feugiat velit. Phasellus dictum eleifend varius. Cras nec orci turpis. Aenean ut turpis nibh.
+	                                        </div>
+	                                    </div>  
+	                                    <div class="row">
+	                                    	<div class="col-md-6 pull-left">
+	                                            <img class="events-object img-responsive img-rounded" src="img/dog03.jpeg" />                                            
+	                                        </div>
+	                                        <div class="events-desc">
+	                                        	Cras condimentum, metus ut vehicula euismod, odio massa pulvinar neque, id gravida neque est et sem. Proin consequat id nibh quis molestie. Quisque vehicula purus id purus elementum facilisis. Phasellus sodales nibh quis neque rhoncus aliquet. Nunc eget ipsum efficitur, pretium arcu et, gravida purus. Phasellus tempor lacus ac enim pulvinar elementum. Integer aliquet justo lacinia nunc tempus vulputate.
+	                                        </div>
+	                                    </div>                                    
+	                                </div>   
+	                                <div class="events-footer">
+	                                	123
+	                                </div>                               
+	                            </div>
+	                        </dd>
+	                        <dt>Feb 2016</dt>
+	                        <dd class="pos-right clearfix">
+	                            <div class="circ"></div>
+	                            <div class="time">Jan 21</div>
+	                            <div class="events">
+	                                <div class="events-header">A Very Very Looooooooooooooooooooong Event Heading</div>                                
+	                                <div class="events-body">                                                                                            
+	                                    <div class="row">
+	                                    	<div class="col-md-6 pull-left">
+	                                            <img class="events-object img-responsive img-rounded" src="/img/portfolio/cat01.jpeg" />
+	                                        </div>
+	                                        <div class="events-desc">
+	                                        	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                                        </div>
+	                                    </div>
+	                                    <div class="row">
+	                                    	<div class="col-md-6 pull-left">
+	                                            <img class="events-object img-responsive img-rounded" src="img/cat02.jpeg" />
+	                                        </div>
+	                                        <div class="events-desc">
+	                                        	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                                        </div>
+	                                    </div>
+	                                    <div class="row">
+	                                    	<div class="col-md-6 pull-left">
+	                                            <img class="events-object img-responsive img-rounded" src="img/cat03.jpeg" />
+	                                        </div>
+	                                        <div class="events-desc">
+	                                        	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                                        </div>
+	                                    </div>
+	                                </div>       
+	                                <div class="events-footer">
+	                                	
+	                                </div>                                                       
+	                            </div>
+	                        </dd>   
+	                        <dd class="pos-left clearfix">
+	                            <div class="circ"></div>
+	                            <div class="time">Jan 07</div>
+	                            <div class="events">
+	                                <div class="events-header">Event Heading</div>                                
+	                                <div class="events-body">                                                                                            
+	                                    <div class="row">
+	                                    	<div class="col-md-6 pull-left">
+	                                            <img class="events-object img-responsive img-rounded" src="img/rabbit01.jpeg" />
+	                                        </div>
+	                                        <div class="events-desc">
+	                                        	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	                                        </div>
+	                                    </div>
+	                                </div>                                
+	                            </div>
+	                        </dd>                                    
+	                        <dt>Jan 2016</dt>                        
+	                        <dt>Dec 2015</dt>
+	                        <dt>Oct 2015</dt>
+	                        <dt>Sep 2015</dt>
+	                        <dt>Aug 2015</dt>
+	                    </dl>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="related">
+		    <h3>如果你喜欢这个插件，那么你可能也喜欢:</h3>
+		    <a href="http://www.htmleaf.com/jQuery/Layout-Interface/201602043111.html">
+			  <img src="related/1.jpg" width="300" alt="jQuery Timelinr-动感十足的超酷jQuery时间轴插件"/>
+			  <h3>jQuery Timelinr-动感十足的超酷jQuery时间轴插件</h3>
+			</a>
+			<a href="http://www.htmleaf.com/jQuery/Layout-Interface/201507062173.html">
+			  <img src="related/2.jpg" width="300" alt="简单实用的jQuery响应式垂直时间轴插件"/>
+			</a>
+		</div>
+	</div>
+	
+	<script src="http://libs.useso.com/js/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+	<script type="text/javascript" src="bootstrap-3.3.6-dist/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/jquery.eeyellow.Timeline.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.VivaTimeline').vivaTimeline({
+				carousel: true,
+				carouselTime: 3000
+			});
+		});
+	</script>
 </body>
-
 </html>
